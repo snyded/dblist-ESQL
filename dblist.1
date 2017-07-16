@@ -1,0 +1,39 @@
+.\"
+.\" @(#) dblist.1 4.0  93/12/24 15:39:22
+.\"
+.TH DBLIST 1 "dblist 4.0"
+.SH NAME
+dblist \- dumps the contents of a database table to stdout
+.SH SYNOPSIS
+dblist \-d dbname \-t tabname [\-i idxname [value] | -h]
+.SH DESCRIPTION
+.I Dblist
+will print the data for all columns in an Informix database table.
+It has the ability to select an index to sort by and also allows
+the selection of a starting position within that index.
+.SH OPTIONS
+.TP
+.B \-d
+database name
+.TP
+.B \-t
+table name
+.TP
+.B \-i
+index name
+.TP
+     value is where in the table the listing will start
+.TP
+.B \-h
+display header info only
+.SH NOTES
+.I Dblist
+requires that an Informix database engine be installed on the machine
+running it.
+.PP
+Only the first eight parts of an index will be used for sorting.
+.PP
+Text blobs are displayed as "<TEXT value>" rather than displaying the actual
+text.
+.SH SUPPORT
+Send bug reports to Dave Snyder <dave@snide.com>
